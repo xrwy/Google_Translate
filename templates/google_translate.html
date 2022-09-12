@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Translate</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+</head>
+<body>
+    <div class="">
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <h2 class="heading-section">Google Translate</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-10">
+                        <div class="wrap">
+                            <!--<div class="img" style="background-image:url('./static/img/beach.jpg')">-->
+                            </div>
+                            <div class="login-wrap p-4 p-md-1">
+                                <div class="d-flex">
+                                    <div class="w-100">
+                                        <h3 class="mb-4" style="font-size:22px">Google Translate</h3>
+                                    </div>
+                                </div>
+
+                                <form method="post" action="/google_translate" class="signin-form" id="google_translate">
+                                    <div class="form-group" style="text-align:justify !important;">
+                                        <textarea id="textarea" style="resize:none;width: 100%;font-size: 18px;" maxlength="100" readonly>{{translateResult}}</textarea>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <input type="text" class="form-control" required="true" name="text" max="100" id="text">
+                                        <label class="form-control-placeholder" for="text">
+                                            Type the Text to be Translated
+                                        </label>
+                                    </div>
+                                    <div class="form-group" style="margin-top: 30px;clear: both;">
+                                        <label class="form-control-placeholder" style="opacity:0.9 !important;color: #000;">From Language</label>
+                                        <div class="col-auto my-1 p-0">
+                                            <select id="from_lang_" class="custom-select mr-sm-2 form-control" id="inlineFormCustomSelect" style="font-size: 20px;opacity: .6;" name="from_lang" required="true">
+                                                <option value="">From Language Select</option>
+                                                <option value="turkish">Turkish</option>
+                                                <option value="english">English</option>
+                                            </select>
+                                          </div>
+                                    </div>
+                                    <div class="form-group" style="margin-top: 30px;clear: both;">
+                                        <label class="form-control-placeholder" style="opacity:0.9 !important;color: #000;">To Language</label>
+                                        <div class="col-auto my-1 p-0">
+                                            <select id="to_lang_" class="custom-select mr-sm-2 form-control" id="inlineFormCustomSelect" style="font-size: 20px;opacity: .6;" name="to_lang" required="true">
+                                                <option value="">To Language Select</option>
+                                                <option value="tr">Turkish</option>
+                                                <option value="en">English</option>
+                                            </select>
+                                          </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="form-control btn btn-primary rounded submit px-4" style="font-size: 17px;">
+                                            Translate
+                                        </button>
+                                    </div>
+                                </form>
+                                <script src="../static/js/preventDefault.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
